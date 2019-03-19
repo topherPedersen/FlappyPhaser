@@ -1,4 +1,3 @@
-
 <!doctype html> 
 <html lang="en"> 
 <head> 
@@ -46,20 +45,21 @@
     }
 
     function create () {
+        // Add Sky
         this.add.image(400, 300, 'sky');
-        // this.add.image(40, 40, 'bird');
 
+        // Add Flappy Bird
         bird = this.physics.add.sprite(40, 40, 'bird');
 
-        // bird.setBounce(0.2);
-        // bird.setCollideWorldBounds(true);
-        // bird.body.setGravityY(300);
-        // this.physics.add.collider(bird);
+        // Add Collision Detection
+        bird.setBounce(0.2);
+        bird.setCollideWorldBounds(true);
+        bird.body.setGravityY(300);
+        this.physics.add.collider(bird);
     }  
 
     function update () {
     }
 </script>
-
 </body>
 </html>

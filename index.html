@@ -1,3 +1,4 @@
+
 <!doctype html> 
 <html lang="en"> 
 <head> 
@@ -13,10 +14,20 @@
 <body>
 
 <script type="text/javascript">
+
+    // REFERENCE (Official Phaser Tutorial Source Code): https://github.com/topherPedersen/OfficialPhaser3Tutorial
+
     var config = {
         type: Phaser.AUTO,
         width: 800,
         height: 600,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: {y: 300},
+                debug: false             
+            }   
+        },
         scene: {
             preload: preload,
             create: create,
@@ -27,6 +38,7 @@
     
 
     var game = new Phaser.Game(config);
+
     function preload () {
         this.load.image('sky', 'assets/sky.png');
         this.load.image('bird', 'assets/bird.png');
@@ -39,9 +51,10 @@
 
         bird = this.physics.add.sprite(40, 40, 'bird');
 
-        bird.setBounce(0.2);
-        bird.setCollideWorldBounds(true);
-        bird.body.setGravityY(300);
+        // bird.setBounce(0.2);
+        // bird.setCollideWorldBounds(true);
+        // bird.body.setGravityY(300);
+        // this.physics.add.collider(bird);
     }  
 
     function update () {
